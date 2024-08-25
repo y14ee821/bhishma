@@ -6,7 +6,7 @@ export const MqttPub = (client,topic,message) => {
     }
     else
     {
-      console.log(`Message: '${message}' Published on Topic: ${topic}`)
+      console.log(`Published Message: '${message}' Published on Topic: ${topic}`)
     }
   })
 
