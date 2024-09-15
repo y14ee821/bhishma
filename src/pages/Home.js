@@ -10,7 +10,7 @@ export const Home = () => {
         <h2 className="text-black text-4xl font-extrabold dark:text-white">Welcome </h2>
 
         {/* To Rao RaoAutomations™ */}
-        <p className="my-4 dark:text-white">Contorl your Devices remotely from anywhere in the world...</p>
+        <p id="captionMain" className="my-4 dark:text-white">Contorl your Devices remotely from anywhere in the world...</p>
         </div>
 
 

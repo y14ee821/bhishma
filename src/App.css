@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+.cursor-disable
+{
+  cursor: not-allowed;
+}
+#greenback
+{
+  background-color: seagreen;
+}

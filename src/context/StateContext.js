@@ -3,7 +3,8 @@ import {stateReducer} from "../reducer"
 const initialState = {
     connectedToBroker : false,
     channelStates : {},
-    IE_Info : []
+    IE_Info : [],
+    IE_Mapper: {}
 }
 
 const IE_StateContext = createContext(initialState)
@@ -38,12 +39,25 @@ export const IE_stateProvider = ({children})=>{
             }
         )
     }
+
+    function updateIE_Mapper(data)
+    {
+        dispatch({
+            type:"modifyIE_Mapper",
+            payload:
+            {
+                IE_Mapper: data
+            }
+        })
+    }
     const value = {
         connectedToBroker:state.connectedToBroker,
         
         checkBrokerConnection,
         modifyIE_Machines,
-        IE_Info: state.IE_Info
+        updateIE_Mapper,
+        IE_Info: state.IE_Info,
+        IE_Mapper: state.IE_Mapper
         
     }
 
