@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/bhishma/static/css/main.dbd5a7aa.css",
-    "main.js": "/bhishma/static/js/main.0f6343ff.js",
+    "main.js": "/bhishma/static/js/main.f9593f45.js",
     "static/media/ckt.jpg": "/bhishma/static/media/ckt.73e52cf1d26227469108.jpg",
     "static/media/bootstrap-icons.woff?": "/bhishma/static/media/bootstrap-icons.39795c0b4513de014cf8.woff",
     "static/media/bootstrap-icons.woff2?": "/bhishma/static/media/bootstrap-icons.b7bcc075b395c14ce8c2.woff2",
     "index.html": "/bhishma/index.html",
     "main.dbd5a7aa.css.map": "/bhishma/static/css/main.dbd5a7aa.css.map",
-    "main.0f6343ff.js.map": "/bhishma/static/js/main.0f6343ff.js.map"
+    "main.f9593f45.js.map": "/bhishma/static/js/main.f9593f45.js.map"
   },
   "entrypoints": [
     "static/css/main.dbd5a7aa.css",
-    "static/js/main.0f6343ff.js"
+    "static/js/main.f9593f45.js"
   ]
 }
