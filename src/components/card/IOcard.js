@@ -1,19 +1,18 @@
-import { MqttPub } from "../../mqttcomponents/";
+import { MqttPub,MqttSub } from "../../mqttcomponents/";
 import { useIEState } from "../../context";
 import {checkValue} from "../../utils/Utilities"
+
 //Received Message: ip4:1-ip1:1-ip2:1-ip3:1 on topic: rao/status
 export const IOcard = ({ item, client }) => {
   const { IE_Info, modifyIE_Machines } = useIEState();
 
-
-
-
+  MqttSub(client,`${Object.keys(item)}/status`)//subscribes to topic
 
 
   const utility = (item, controlsLength) => {
     /* if any change detected in radio buttons,
                 then current status of all radio buttons of particular IE will be sent to corresponding IE.
-                */
+    */
     MqttPub(
       client,
       `${item.IE_Name}`,
@@ -92,7 +91,10 @@ export const IOcard = ({ item, client }) => {
 
   if (item)//if this components receives valid IE_Info Object
     return Object.keys(item).map((group, index) => (
-      <div key={index} className="border-2 m-2">
+      <>
+      <p className={`text-2xl   text-red-600  font-bold ${IE_Info[group]["running"]?"invisible":" "}`}>unable to communicate to {group}</p>
+      <div key={index} className={`border-2 m-2 ${IE_Info[group]["running"]?" ":"invisible"}`}>
+
         <div className="text-2xl  dark:hover:text-white text-black dark:text-white font-bold">
           Machine Name: {group}
         </div>
@@ -103,5 +105,24 @@ export const IOcard = ({ item, client }) => {
           )}
         </div>
       </div>
+      </>
     ));
 };
+
+
+// if (item)//if this components receives valid IE_Info Object
+// return Object.keys(item).map((group, index) => ( IE_Info[group]["running"]?
+//   <div key={index} className="border-2 m-2">
+//     <div className="text-2xl  dark:hover:text-white text-black dark:text-white font-bold">
+//       Machine Name: {group}
+//     </div>
+//     <div className="flex flex-wrap justify-center">
+//       {/* creates UI component for each IE_Info Object by using funtion: 'individualGroup' */}
+//       {Object.keys(item[group]).map((value) =>
+//         individualGroup(item[group][value], Object.keys(item[group]).length)
+//       )}
+//     </div>
+//   </div>:
+//   <p className="text-2xl  dark:hover:text-white text-black dark:text-white font-bold">unable to communicate to {group}</p>
+// ));
+// };

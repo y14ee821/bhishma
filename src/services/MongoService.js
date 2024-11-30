@@ -42,15 +42,16 @@ export const IE_Data = () => {
       },
       "lastUpdated":"",
 
-      "faulty":""
+      "faulty":"",
+      "running":true
       },
-      "venkateswara": {
+      "venky": {
         "channels":{
         1: {
           id: 1,
           name: "1",
           currentState: "OFF",
-          IE_Name: "venkateswara",
+          IE_Name: "venky",
           radioValue: "",
           channelUpdatedTime:""
         },
@@ -58,13 +59,14 @@ export const IE_Data = () => {
           id: 2,
           name: "2",
           currentState: "OFF",
-          IE_Name: "venkateswara",
+          IE_Name: "venky",
           radioValue: "",
           channelUpdatedTime:""
         },
       },
       "lastUpdated":"",
-      "faulty":""
+      "faulty":"",
+      "running":true
       },
     }
   );
