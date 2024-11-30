@@ -96,6 +96,7 @@ export const MqttMessage = (client) => {
           "faulty"
         ] == true
       ) {
+        console.log("error seen")
         // if due to some issue , device UI to control the IE then it will send the current status of all the UI buttons status to the IE, so that there will be change detected at IE side (UI control will have priority when compared to manual control)
         MqttPub(
           client,
