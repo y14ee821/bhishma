@@ -20,16 +20,16 @@ const currentIE = params.id
 
 const IE_Names = Object.keys(IE_Info)//gets the machine names
   const options = {
-    //protocol: 'ws',
-     protocol: 'wss',
+    protocol: 'wss',
      keepalive: 600,
     clean: true,
     reconnectPeriod: 1000, // ms
     connectTimeout: 30 * 1000, // ms
-    clientId: 'emqx_react_' + Math.random().toString(16).substring(2, 8)
+    clientId: 'emqx_react_lohit_' + Math.random().toString(16).substring(2, 8)
     
   }
-  const url = process.env.REACT_APP_MQTT_HOST
+  //const url = process.env.REACT_APP_MQTT_HOST
+  const url = "wss://broker.emqx.io:8084/mqtt"
   const [client,setClient] = useState(mqtt.connect(url, options)) 
   useEffect(()=>{
       

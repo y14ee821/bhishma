@@ -109,7 +109,14 @@ export const MqttMessage = (client) => {
         IE_Info[topic.split("/")[0]]["channels"][ChannelStatusSplit[0][2]][
           "faulty"
         ] = false;
+        // notify(
+        //   `unable to control the channel:${ChannelStatusSplit[0][2]}, try again`
+        // );
+        alert(`unable to control the channel:${ChannelStatusSplit[0][2]}, try again`)
+        window.location.reload()
         modifyIE_Machines(IE_Info);
+        
+
       }
       document.getElementById(
         `${topic.split("/")[0]}-${ChannelStatusSplit[0][2]}-current`
@@ -241,7 +248,7 @@ export const MqttMessage = (client) => {
     if (IE_Info.length != 0) {
       IE_Info[topic.split("/")[0]]["lastUpdated"] = new Date();
       IE_Info[topic.split("/")[0]]["running"] = true;
-      
+            
     }
     modifyIE_Machines(IE_Info);
     try{
