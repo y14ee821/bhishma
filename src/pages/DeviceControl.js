@@ -20,7 +20,8 @@ const currentIE = params.id
 
 const IE_Names = Object.keys(IE_Info)//gets the machine names
   const options = {
-    protocol: 'wss',
+    protocol: 'ws',
+    // protocol: 'wss',
      keepalive: 600,
     clean: true,
     reconnectPeriod: 1000, // ms
