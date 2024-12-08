@@ -4,6 +4,7 @@ import {checkValue} from "../../utils/Utilities"
 
 //Received Message: ip4:1-ip1:1-ip2:1-ip3:1 on topic: rao/status
 export const IOcard = ({ item, client }) => {
+  
   const { IE_Info, modifyIE_Machines } = useIEState();
 
   MqttSub(client,`${Object.keys(item)}/status`)//subscribes to topic
@@ -93,7 +94,7 @@ export const IOcard = ({ item, client }) => {
     return Object.keys(item).map((group, index) => (
       <>
       <p className={`text-2xl   text-red-600  font-bold ${IE_Info[group]["running"]?"invisible":" "}`}>unable to communicate to {group}</p>
-      <div key={index} className={`border-2 m-2 ${IE_Info[group]["running"]?" ":"invisible"}`}>
+      <div key={index} className={` m-2 ${IE_Info[group]["running"]?" ":"invisible"}`}>
 
         <div className="text-2xl  dark:hover:text-white text-black dark:text-white font-bold">
           Machine Name: {group}
