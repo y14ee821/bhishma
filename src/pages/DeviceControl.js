@@ -28,8 +28,8 @@ const IE_Names = Object.keys(IE_Info)//gets the machine names
     clientId: 'emqx_react_lohit_' + Math.random().toString(16).substring(2, 8)
     
   }
-  //const url = process.env.REACT_APP_MQTT_HOST
-  const url = "wss://broker.emqx.io:8084/mqtt"
+  const url = process.env.REACT_APP_MQTT_HOST
+  //const url = "wss://broker.emqx.io:8084/mqtt"
   const [client,setClient] = useState(mqtt.connect(url, options)) 
   useEffect(()=>{
       
